@@ -97,6 +97,8 @@ public class ContaServiceTest {
         //Então
         Assert.assertFalse(contaUm.getAgencia() ==contaDois.getAgencia());
         Assert.assertFalse(contaUm.getNumero() == contaDois.getNumero());
+        Assert.assertSame(contaUm,contaUm);
+        Assert.assertSame(contaDois,contaDois);
     }
 
 
