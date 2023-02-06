@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e7c2ba6-738a-4590-857f-236b6c497106" name="Changes" comment="Finhalização">
+      <change afterPath="$PROJECT_DIR$/src/test/java/service/ContaServiceTestException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/ContaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/ContaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/service/ContaServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/service/ContaServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +70,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaServiceTest.comSaldoDeveSerPossivelTransferir" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContaServiceTestException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Conta_Bancaria" />
       <extension name="coverage">
         <pattern>
@@ -77,14 +79,45 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="service" />
-      <option name="MAIN_CLASS_NAME" value="service.ContaServiceTest" />
-      <option name="METHOD_NAME" value="comSaldoDeveSerPossivelTransferir" />
+      <option name="MAIN_CLASS_NAME" value="service.ContaServiceTestException" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContaServiceTestException.deveLancarExceptionQuandoValorDoSaqueForNegativo_2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Conta_Bancaria" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.ContaServiceTestException" />
+      <option name="METHOD_NAME" value="deveLancarExceptionQuandoValorDoSaqueForNegativo_2" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContaServiceTest.contaComMesmoNumeroAgencia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContaServiceTestException.deveLancarExceptionQuandoValorDoSaqueForNegativo_3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Conta_Bancaria" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="service" />
+      <option name="MAIN_CLASS_NAME" value="service.ContaServiceTestException" />
+      <option name="METHOD_NAME" value="deveLancarExceptionQuandoValorDoSaqueForNegativo_3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContaServiceTest.deveLancarExceptionQuandoValorDoSaqueForNegativo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Conta_Bancaria" />
       <extension name="coverage">
         <pattern>
@@ -94,7 +127,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="service" />
       <option name="MAIN_CLASS_NAME" value="service.ContaServiceTest" />
-      <option name="METHOD_NAME" value="contaComMesmoNumeroAgencia" />
+      <option name="METHOD_NAME" value="deveLancarExceptionQuandoValorDoSaqueForNegativo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,8 +136,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ContaServiceTest" />
-        <item itemvalue="JUnit.ContaServiceTest.contaComMesmoNumeroAgencia" />
-        <item itemvalue="JUnit.ContaServiceTest.comSaldoDeveSerPossivelTransferir" />
+        <item itemvalue="JUnit.ContaServiceTestException" />
+        <item itemvalue="JUnit.ContaServiceTestException.deveLancarExceptionQuandoValorDoSaqueForNegativo_3" />
+        <item itemvalue="JUnit.ContaServiceTestException.deveLancarExceptionQuandoValorDoSaqueForNegativo_2" />
+        <item itemvalue="JUnit.ContaServiceTest.deveLancarExceptionQuandoValorDoSaqueForNegativo" />
       </list>
     </recent_temporary>
   </component>
@@ -124,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675374967967</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Finhalização">
+      <created>1675464146376</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675464146376</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

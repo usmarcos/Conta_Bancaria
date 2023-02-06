@@ -1,9 +1,15 @@
 package service;
 
 import model.Conta;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.*;
+import static org.junit.Assert.*;
+
+import org.junit.*;
+import org.junit.rules.ErrorCollector;
+import org.junit.rules.ExpectedException;
+
+import java.util.Objects;
 
 /**
  * Deve ser possível criar uma conta
@@ -37,9 +43,9 @@ public class ContaServiceTest {
         //Quando
 
         //Então
-        Assert.assertEquals(Integer.valueOf(1), conta.getAgencia());
-        Assert.assertEquals((Integer) 1, conta.getNumero());
-        Assert.assertEquals("Teste", conta.getNomeDoCliente());
+        assertEquals(Integer.valueOf(1), conta.getAgencia());
+        assertEquals((Integer) 1, conta.getNumero());
+        assertEquals("Teste", conta.getNomeDoCliente());
     }
 
     @Test
@@ -50,7 +56,7 @@ public class ContaServiceTest {
 
         //Então
         //Então
-        Assert.assertEquals((Double) 0.0, conta.getSaldo());
+        assertEquals((Double) 0.0, conta.getSaldo());
     }
 
     @Test
@@ -60,18 +66,19 @@ public class ContaServiceTest {
         //Quando
         contaService.depositar(conta, 10.0);
         //Então
-        Assert.assertEquals((Double) 10.0, conta.getSaldo());
+        assertEquals((Double) 10.0, conta.getSaldo());
     }
 
     @Test
-    public void deveSerPossivelSacar() {
+    public void deveSerPossivelSacar() throws Exception {
+
         //Dado
         Conta conta = contaService.cadastrar("Teste");
         //Quando
         contaService.depositar(conta, 10.0);
         contaService.sacar(conta, 5.0);
         //Então
-        Assert.assertEquals((Double) 5.0, conta.getSaldo());
+        assertEquals((Double) 5.0, conta.getSaldo());
 
     }
 
@@ -84,7 +91,7 @@ public class ContaServiceTest {
         //Quando
         contaService.transferir(de, para, 30.0);
         //Então
-        Assert.assertEquals(de.getSaldo() == 20.0, para.getSaldo() == 30.0);
+        assertEquals(de.getSaldo() == 20.0, para.getSaldo() == 30.0);
     }
 
     @Test
@@ -95,10 +102,38 @@ public class ContaServiceTest {
         //Quando
 
         //Então
-        Assert.assertFalse(contaUm.getAgencia() ==contaDois.getAgencia());
-        Assert.assertFalse(contaUm.getNumero() == contaDois.getNumero());
-        Assert.assertSame(contaUm,contaUm);
-        Assert.assertSame(contaDois,contaDois);
+        assertFalse(Objects.equals(contaUm.getAgencia(), contaDois.getAgencia()));
+        assertFalse(Objects.equals(contaUm.getNumero(), contaDois.getNumero()));
+        assertSame(contaUm, contaUm);
+        assertSame(contaDois, contaDois);
+    }
+
+    @Test
+    public void assertThatTest() {
+        //verifique que...
+        Conta contaMaria = contaService.cadastrar("Maria");
+        assertThat(contaMaria.getSaldo(), is(0.0));
+        assertThat(contaMaria.getNomeDoCliente(), not("João"));
+        //verifica se é uma instância de classe
+        assertThat(contaMaria, is(instanceOf(Conta.class)));
+    }
+
+    @Rule
+    public ErrorCollector errorCollector = new ErrorCollector();
+
+    @Ignore
+    @Test
+    public void validandoAsserts() {
+        Conta conta = contaService.cadastrar("Marcos");
+
+        assertEquals("Marcos", conta.getNomeDoCliente());
+        errorCollector.checkThat("Marcos1", is(conta.getNomeDoCliente()));
+
+        assertEquals((Double) 0.0, conta.getSaldo());
+       errorCollector.checkThat(1.0, is(conta.getSaldo()));
+
+        assertEquals((Integer) 1, conta.getNumero());
+        errorCollector.checkThat(2, is(conta.getNumero()));
     }
 
 
