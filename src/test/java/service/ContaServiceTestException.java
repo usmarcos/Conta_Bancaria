@@ -30,7 +30,7 @@ public class ContaServiceTestException {
         contaService.sacar(conta, -5.0);
     }
 
-    @Test (expected = Exception.class)
+    @Test(expected = Exception.class)
     public void deveLancarExceptionQuandoValorDoSaqueForNegativo_2() throws Exception {
         //Dado
         Conta conta = contaService.cadastrar("Teste");
@@ -43,10 +43,26 @@ public class ContaServiceTestException {
         //Dado
         Conta conta = contaService.cadastrar("Teste");
         //Quando
-        try{
+        try {
             contaService.sacar(conta, -5.0);
-        }catch (Exception e){
+        } catch (Exception e) {
             Assert.assertThat(e.getMessage(), CoreMatchers.is("O valor de saque não pode ser negativo"));
         }
+    }
+
+    @Test
+    public void deveLancarExceptionQuandoValorDoSaqueForNegativo_4() throws Exception {
+        Conta conta = contaService.cadastrar("Teste");
+        Assert.assertThrows(Exception.class,
+                () -> contaService.sacar(conta, -5.0));
+
+    }
+
+    @Test
+    public void deveLancarExceptionQuandoValorDoSaqueForNegativo_5() {
+        Conta conta = contaService.cadastrar("Teste");
+        Throwable throwable = Assert.assertThrows(Exception.class,
+                () -> contaService.sacar(conta, -5.0));
+        Assert.assertEquals("O valor de saque não pode ser negativo", throwable.getMessage());
     }
 }
